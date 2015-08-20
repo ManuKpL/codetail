@@ -6,7 +6,7 @@
   <div class="bg-shadowed bg-icons">
     <p>  
       <%=link_to edit_cocktail_path(@cocktail) do %><i class="fa fa-pencil"></i></i><% end %>  |  
-      <%=link_to cocktail_path(@cocktail), method: :delete do %><i class="fa fa-trash-o"></i><% end %>
+      <%=link_to cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} do %><i class="fa fa-trash-o"></i><% end %>
     </p>
   </div>
   <div class="row">
