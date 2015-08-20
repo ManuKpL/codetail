@@ -32,9 +32,23 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Front-end
+gem 'bootstrap-sass', '~> 3.3.1'
+gem 'font-awesome-sass', '~> 4.2.0'
+gem 'simple_form'
+
+# Optimisation du déploiement sur Heroku
+ruby '2.2.2'
+gem 'rails_12factor', group: :production
+gem 'puma', group: :production
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+
+  # Special debug gems for rails
+  gem "better_errors"
+  gem "binding_of_caller"
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
