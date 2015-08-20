@@ -1,2 +1,28 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="my-header">
+  <h1><%= @cocktail.name.capitalize %></h1>
+  <hr>
+</div>
+<div class="bg bg-white bg--shadowed text-center container padded">
+  <div class="bg-shadowed bg-icons">
+    <p>  
+      <%=link_to edit_cocktail_path(@cocktail) do %><i class="fa fa-pencil"></i></i><% end %>  |  
+      <%=link_to cocktail_path(@cocktail), method: :delete do %><i class="fa fa-trash-o"></i><% end %>
+    </p>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+      <h4>Ingredients:</h4>
+      <% @cocktail.ingredients.each do |ingredient| %>
+        <p><%= ingredient.name.capitalize %></p>
+      <% end %>
+      <hr>
+      <h4>Doses:</h4>
+      <% @cocktail.doses.each do |dose| %>
+        <p><%= dose.description.capitalize %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="text-center">
+  <%= link_to "Back to list", cocktails_path, class: "btn btn-primary" %>
+</div>
