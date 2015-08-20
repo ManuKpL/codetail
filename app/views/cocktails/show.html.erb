@@ -9,25 +9,24 @@
       <%=link_to cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} do %><i class="fa fa-trash-o"></i><% end %>
     </p>
   </div>
-  <div style="background-image: url(<%= @cocktail.picture %>), background-size: cover"></div>
+  <div class="image-show" style="background-image: url(<%= @cocktail.picture %>)"></div>
 </div>
 <div class="bg bg-white bg--shadowed text-center container padded">
   <div class="bg-shadowed bg-icons">
     <p>  
-      <%=link_to edit_cocktail_path(@cocktail) do %><i class="fa fa-pencil"></i></i><% end %>  |  
-      <%=link_to cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} do %><i class="fa fa-trash-o"></i><% end %>
+      <%=link_to new_cocktail_dose_path([@cocktail, @dose]) do %><i class="fa fa-pencil"></i></i><% end %>
     </p>
   </div>
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-      <h4>Ingredients:</h4>
-      <% @cocktail.ingredients.each do |ingredient| %>
-        <p><%= ingredient.name.capitalize %></p>
-      <% end %>
+      <h4>Recipe:</h4>
       <hr>
-      <h4>Doses:</h4>
       <% @cocktail.doses.each do |dose| %>
-        <p><%= dose.description.capitalize %></p>
+        <p>
+          <%= Ingredient.find(dose[:ingredient_id]).name.capitalize %>,
+            <%= dose.description %>  |  
+            <%=link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Are you sure?"} do %><i class="fa fa-trash-o"></i><% end %>
+        </p>
       <% end %>
     </div>
   </div>

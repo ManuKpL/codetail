@@ -1,9 +1,10 @@
 class DosesController < ApplicationController
-  before_action :set_cocktail, :set_ingredient
+  before_action :set_cocktail
   before_action :set_dose, only: [:destroy]
 
   def new
     @dose = Dose.new
+    @ingredients = Ingredient.all
   end
 
   def create
@@ -20,10 +21,6 @@ class DosesController < ApplicationController
 
   def set_cocktail
     @cocktail = Cocktail.find(params[:cocktail_id])
-  end
-
-  def set_ingredient
-    @ingredient = Ingredient.find(params[:ingredient_id])
   end
 
   def set_dose
