@@ -2,11 +2,6 @@ class DosesController < ApplicationController
   before_action :set_cocktail
   before_action :set_dose, only: [:destroy]
 
-  def new
-    @dose = Dose.new
-    @ingredients = Ingredient.all
-  end
-
   def create
     @dose = @cocktail.doses.build(dose_params)
     @dose.save ? (redirect_to cocktail_path(@cocktail)) : (render :new)

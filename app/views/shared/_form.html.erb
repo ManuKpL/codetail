@@ -1,4 +1,6 @@
 <div class="bg bg-white bg-shadowed text-center container padded">
+  <h4>Add a new dose</h4>
+  <hr>
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
@@ -8,7 +10,4 @@
       <% end %>
     </div>
   </div>
-</div>
-<div class="text-center">
-  <%= link_to "Back to list", cocktails_path, class: "btn btn-primary" %>
 </div>
