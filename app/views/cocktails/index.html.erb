@@ -5,7 +5,7 @@
 <div class="text-center">
   <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
 </div>
-<div class="bg bg-white bg-shadowed container padded">
+<div id="index-container" class="bg bg-white bg-shadowed container marged">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
       <div class="col-xs-12 col-md-4 text-center">
