@@ -42,11 +42,16 @@
     right: -10px;
     font-size: 25px;
     color: white;
-    &-green-box {
+    border: 2px solid white;
+    z-index: 3;
+    &-btn {
+      border: none;
+    }
+    &-blue-box {
       line-height: 50px;
       padding: 0px 25px;
       border-radius: 2px 15px 2px 15px;
-      background-color: $brand-success;
+      background-color: $brand-primary;
       a {
         color: white;
         &:hover {

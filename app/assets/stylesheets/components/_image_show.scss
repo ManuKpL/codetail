@@ -2,10 +2,13 @@
   background-size: cover;
   height: 350px;
   display: flex;
+  position: relative;
+  border-radius: 3px;
   h1 {
     color: white;
     justify-content: space-around;
     align-self: center;
     flex: 1 0 auto;
+    z-index: 2;
   }
 }

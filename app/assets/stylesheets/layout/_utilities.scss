@@ -12,7 +12,7 @@
 
 
 .marged {
-  margin: 3em auto;
+  margin: 3em auto !important;
 }
 
 
@@ -62,4 +62,15 @@
   .wrapper {
     flex-direction: column;
   }
+}
+
+#my-header {
+  border-radius: 0px;
+  margin-bottom: 3em;
+  height: 500px;
+  background-image: url('http://www.kempinski.com/assets/kempinski-hotel-bristol-berlin/RestaurantsBars/Bilder/_resampled/SetWidth1700-Kempinski-Hotel-Bristol-Berlin-Gastronomie-Bristol-Bar.jpg');
+}
+
+#index-container {
+  height: auto;
 }

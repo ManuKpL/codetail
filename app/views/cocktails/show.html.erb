@@ -1,17 +1,18 @@
 <div class="bg bg-white bg-shadowed text-center container padded marged">
-  <div class="bg-shadowed my-badge my-badge-green-box">
+  <div class="bg-shadowed my-badge my-badge-blue-box">
     <p>
       <%=link_to edit_cocktail_path(@cocktail) do %><i class="fa fa-pencil"></i></i><% end %>  |
       <%=link_to cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} do %><i class="fa fa-trash-o"></i><% end %>
     </p>
   </div>
   <div class="image-show" style="background-image: url(<%= @cocktail.picture.url(:large) || "https://unsplash.it/600/400?random" %>)">
+    <div class="card-bg"></div>
     <h1><%= @cocktail.name.capitalize %></h1>
     <hr>
   </div>
 </div>
 <div class="bg bg-white bg-shadowed text-center container padded marged">
-  <div class="bg-shadowed my-badge">
+  <div class="bg-shadowed my-badge my-badge-btn">
     <div class="text-center">
       <%= link_to "Back to list", cocktails_path, class: "btn btn-primary" %>
     </div>
