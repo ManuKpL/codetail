@@ -1,6 +1,9 @@
-<div class="my-header">
-  <h1>Add a new cocktail</h1>
-  <hr>
+<div class="bg bg-white bg-shadowed text-center container padded marged">
+  <div class="image-show" style="background-image: url(<%= @cocktail.picture.url(:large) || "https://unsplash.it/600/400?random" %>)">
+    <div class="card-bg"></div>
+    <h1>Add a new cocktail</h1>
+    <hr>
+  </div>
 </div>
 <%= render 'form' %>
 <div class="text-center">
