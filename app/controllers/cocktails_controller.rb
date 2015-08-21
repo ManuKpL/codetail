@@ -7,7 +7,6 @@ class CocktailsController < ApplicationController
 
   def show
     @dose = Dose.new
-    @ingredients = Ingredient.all
   end
 
   def new
@@ -38,6 +37,6 @@ class CocktailsController < ApplicationController
   end
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :picture)
   end
 end

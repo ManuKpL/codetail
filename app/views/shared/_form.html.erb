@@ -1,11 +1,11 @@
-<div class="bg bg-white bg-shadowed text-center container padded">
+<div class="bg bg-white bg-shadowed text-center container padded marged">
   <h4>Add a new dose</h4>
   <hr>
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-sm-offset-2">
       <%= simple_form_for [@cocktail, @dose] do |f| %>
       <%= f.input :description %>
-      <%= f.input :ingredient_id, as: :select, collection: @ingredients %>
+      <%= f.input :ingredient_id, as: :select, collection: Ingredient.all %>
       <%= f.button :submit, class: "btn btn-success" %>
       <% end %>
     </div>

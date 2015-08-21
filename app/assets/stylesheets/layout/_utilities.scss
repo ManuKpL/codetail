@@ -10,10 +10,9 @@
   padding-bottom: 1em;
 }
 
-@media screen and (min-width: 500px) {
-  .marged {
-    margin: 3em auto;
-  }
+
+.marged {
+  margin: 3em auto;
 }
 
 
@@ -37,5 +36,30 @@
   }
   &-white {
     background-color: white;
+  }
+}
+
+#image-thumbnail {
+  border-radius: 5px;
+  border: 2px solid white;
+  box-shadow: 1px 1px 3px rgb(150,150,150);
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  #flex-left {
+    flex: 1 0 auto;
+  }
+  #flex-right {
+    flex: 3 0 auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper {
+    flex-direction: column;
   }
 }

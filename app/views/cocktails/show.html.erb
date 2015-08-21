@@ -1,17 +1,16 @@
-<div class="my-header">
-  <h1><%= @cocktail.name.capitalize %></h1>
-  <hr>
-</div>
-<div class="bg bg-white bg-shadowed text-center container padded">
+<div class="bg bg-white bg-shadowed text-center container padded marged">
   <div class="bg-shadowed my-badge my-badge-green-box">
-    <p>  
-      <%=link_to edit_cocktail_path(@cocktail) do %><i class="fa fa-pencil"></i></i><% end %>  |  
+    <p>
+      <%=link_to edit_cocktail_path(@cocktail) do %><i class="fa fa-pencil"></i></i><% end %>  |
       <%=link_to cocktail_path(@cocktail), method: :delete, data: {confirm: "Are you sure?"} do %><i class="fa fa-trash-o"></i><% end %>
     </p>
   </div>
-  <div class="image-show" style="background-image: url(<%= @cocktail.picture %>)"></div>
+  <div class="image-show" style="background-image: url(<%= @cocktail.picture.url(:large) || "https://unsplash.it/600/400?random" %>)">
+    <h1><%= @cocktail.name.capitalize %></h1>
+    <hr>
+  </div>
 </div>
-<div class="bg bg-white bg-shadowed text-center container padded">
+<div class="bg bg-white bg-shadowed text-center container padded marged">
   <div class="bg-shadowed my-badge">
     <div class="text-center">
       <%= link_to "Back to list", cocktails_path, class: "btn btn-primary" %>
@@ -24,7 +23,7 @@
       <% @cocktail.doses.each do |dose| %>
         <p>
           <%= Ingredient.find(dose[:ingredient_id]).name.capitalize %>,
-            <%= dose.description %>  |  
+            <%= dose.description %>  |
             <%=link_to cocktail_dose_path(@cocktail, dose), method: :delete, data: {confirm: "Are you sure?"} do %><i class="fa fa-trash-o"></i><% end %>
         </p>
       <% end %>

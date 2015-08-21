@@ -1,9 +1,18 @@
 <div class="bg bg-white bg-shadowed text-center container padded marged">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="col-xs-10 col-sm-8 col-sm-offset-2">
       <%= simple_form_for @cocktail do |f| %>
       <%= f.input :name %>
-      <%= f.input :picture, label: "Add a link to an online picture" %>
+      <div class="wrapper">
+      <div id="flex-left" class="text-left padded">
+        <% if @cocktail.picture.url(:thumb) %>
+          <span>Actual picture: <%= image_tag @cocktail.picture.url(:thumb), id: "image-thumbnail" %></span>
+        <% end %>
+      </div>
+      <div id="flex-right">
+        <%= f.input :picture, label: false %>
+      </div>
+      </div>
       <%= f.button :submit, class: "btn btn-success" %>
       <% end %>
     </div>

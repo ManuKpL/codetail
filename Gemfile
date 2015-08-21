@@ -40,6 +40,10 @@ gem 'simple_form'
 # FIGARO
 gem 'figaro'
 
+# Paperclip
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
+
 # Optimisation du déploiement sur Heroku
 ruby '2.2.2'
 gem 'rails_12factor', group: :production
