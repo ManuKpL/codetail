@@ -3,3 +3,6 @@
   <hr>
 </div>
 <%= render 'form' %>
+<div class="text-center">
+  <%= link_to cocktail_path(@cocktail), class: "btn btn-primary" do %>Back to <%= @cocktail.name %><% end %>
+</div>
