@@ -3,12 +3,12 @@
   <hr>
 </div>
 <div class="text-center">
-  <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-success btn-lg" %>
+  <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
 </div>
 <div class="bg bg-white bg-shadowed container padded">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-xs-12 col-sm-6 col-md-4 text-center">
+      <div class="col-xs-12 col-md-4 text-center">
         <div class="card" style="background-image: url(<%= cocktail.picture || "https://unsplash.it/600/400?random" %>)">
           <div class="card-bg"></div>
           <div class="card-content">
